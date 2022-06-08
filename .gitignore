@@ -4,3 +4,4 @@ desc_emb.npz
 attributes+description_pca.html
 NFT_attributes.npz
 NFT_Collections.json
+/data/*
