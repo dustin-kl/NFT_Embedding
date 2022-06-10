@@ -9,7 +9,7 @@ import ast
 
 X = 20
 
-desc_emb = np.load("../data/desc_emb.npz")
+desc_emb = np.load("../data_copy/desc_emb.npz")
 traindata_desc_embeddings = dict(
     zip(("desc_embeddings"), (desc_emb[k] for k in desc_emb))
 )["d"]
@@ -23,6 +23,9 @@ contract_addresses = d["contract_addresses"]
 train_add_emb_desc = list(
     zip(contract_addresses, traindata_desc_embeddings, description_list)
 )
+
+modelPath = "../data_copy/bert-base-model"
+model = SentenceTransformer(modelPath)
 
 input_description = sys.argv[1]
 

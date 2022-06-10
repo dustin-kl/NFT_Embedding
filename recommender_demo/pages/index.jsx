@@ -2,14 +2,16 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import { NFTCard } from "./components/nftCard";
-//import {PythonShell} from 'python-shell'
+//import PythonShell from "python-shell";
 
 const Home = () => {
   const [wallet, setWalletAddress] = useState("");
   const [NFTs, setNFTs] = useState([]);
   const [userNFTs, setUserNFTs] = useState(true);
+  const [contractAddressList, setContractAddressList] = useState([]);
   const [recAdd, setrecAdd] = useState("");
   const [NFTRecommendations, setNFTRecommendations] = useState([]);
+  const [inputDescription, setInputDescription] = useState("");
 
   const fetchNFTs = async () => {
     let nfts;
@@ -28,15 +30,11 @@ const Home = () => {
     }
   };
 
-  const runPythonScriptDummy = async () => {
-    console.log("hi");
-  };
-
   const runPythonScript = async () => {
     //const {PythonShell} = require('python-shell')
     console.log("hi");
     const data_to_pass_in = {
-      data_sent: "blabla1",
+      data_sent: inputDescription,
       data_returned: undefined,
     };
 
@@ -76,16 +74,6 @@ const Home = () => {
         >
           Show my NFTs!
         </button>
-        <button
-          className={
-            "disabled:bg-slate-500 text-white bg-blue-400 px-4 py-2 mt-3 rounded-sm w-1/5"
-          }
-          onClick={() => {
-            runPythonScriptDummy();
-          }}
-        >
-          Test!
-        </button>
       </div>
       <div className="flex flex-wrap gap-y-12 mt-4 w-5/6 gap-x-2 justify-center">
         {NFTs.length &&
@@ -100,6 +88,10 @@ const Home = () => {
                   setrecAdd={setrecAdd}
                   NFTRecommendations={NFTRecommendations}
                   setNFTRecommendations={setNFTRecommendations}
+                  contractAddressList={contractAddressList}
+                  setContractAddressList={setContractAddressList}
+                  inputDescription={inputDescription}
+                  setInputDescription={setInputDescription}
                   setUserNFTs={setUserNFTs}
                 ></NFTCard>
               );
@@ -123,6 +115,10 @@ const Home = () => {
                     setrecAdd={setrecAdd}
                     NFTRecommendations={NFTRecommendations}
                     setNFTRecommendations={setNFTRecommendations}
+                    contractAddressList={contractAddressList}
+                    setContractAddressList={setContractAddressList}
+                    inputDescription={inputDescription}
+                    setInputDescription={setInputDescription}
                     setUserNFTs={setUserNFTs}
                   ></NFTCard>
                 );
