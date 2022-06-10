@@ -7,6 +7,7 @@ import sys
 import json
 import ast
 
+X = 20
 
 desc_emb = np.load("../data/desc_emb.npz")
 traindata_desc_embeddings = dict(
