@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import { NFTCard } from "./components/nftCard";
-//import PythonShell from "python-shell";
+import PythonShell from "python-shell";
 
 const Home = () => {
   const [wallet, setWalletAddress] = useState("");
