@@ -20,7 +20,7 @@ export const NFTCard = ({
     <div className="w-1/4 flex flex-col ">
       <div className="rounded-md">
         <img
-          className="h-128 w-full rounded-t-md"
+          className="object-cover h-128 w-full rounded-t-md"
           src={nft.media[0].gateway}
         ></img>
       </div>
@@ -57,6 +57,7 @@ export const NFTCard = ({
         {userNFTs ? (
           <div className="flex justify-center mb-1 mt-4">
             <button
+              style={{ backgroundColor: "#a0edff", color: "#000000" }}
               className="py-2 px-4 bg-blue-500 w-1/2 text-center rounded-m text-white cursor-pointer"
               onClick={() => {
                 let recs;
