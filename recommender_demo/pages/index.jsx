@@ -110,7 +110,7 @@ const Home = () => {
               {" "}
               <h1 className={"mt-3"} style={{ fontSize: "20px" }}>
                 {" "}
-                Enjoy your Deep Learning Recommendations!{" "}
+                Enjoy your Deep Learning Recommendations{" "}
               </h1>{" "}
             </div>
           ) : null}
